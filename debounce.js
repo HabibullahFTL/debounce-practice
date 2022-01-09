@@ -11,11 +11,14 @@ const debounce = (fn,delay)=>{
 const btnDebounce = document.getElementById("btnDebounce");
 
 btnDebounce.addEventListener("click",debounce(()=>{
-    console.log("Clicked");
-},2000))
+    document.getElementById("showBtnStatus").innerHTML = "You clicked on the button!";
+    setTimeout(()=>{
+        document.getElementById("showBtnStatus").innerHTML = "";
+    },2000)
+},600))
 
 const inputDebounce = document.querySelector('#inputDebounce');
 
 inputDebounce.addEventListener("keyup",debounce(()=>{
-    console.log(inputDebounce.value);
+    document.getElementById("showSearchText").innerHTML = inputDebounce.value;
 },1000))
